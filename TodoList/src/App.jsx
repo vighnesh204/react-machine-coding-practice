@@ -28,6 +28,11 @@ const App = () => {
       }
     }))
   }
+  const deleteTodo = (id) => {
+    setTodoList(
+      todoList.filter((item)=> item.id != id)
+    )
+  }
 
   return (
     <div className="min-h-screen bg-zinc-900 flex justify-center items-start pt-16 px-4">
@@ -79,7 +84,7 @@ const App = () => {
                   </span>
                 </div>
 
-                <button className="px-3 py-1.5 bg-green-600 hover:bg-green-700 transition text-white rounded-md text-sm font-medium">
+                <button className="px-3 py-1.5 bg-green-600 hover:bg-green-700 transition text-white rounded-md text-sm font-medium" onClick={()=> deleteTodo(item.id)}>
                   Delete
                 </button>
               </li>
