@@ -1,9 +1,12 @@
-import UseStateHook from "./components/UseStateHook";
+// import UseStateHook from "./components/UseStateHook";
+import UseEffectHook from "./components/UseEffectHook";
+
 
 function App() {
   return (
     <div>
-   <UseStateHook />
+   {/* <UseStateHook /> */}
+   <UseEffectHook />
   </div>
   )
 }
