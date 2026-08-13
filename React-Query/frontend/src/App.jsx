@@ -1,10 +1,7 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-
+import CustomReactQuery from "./hooks/customReactQuery";
 const App = () => {
-  const [data, setData] = useState([]);
-  const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(false);
+
+  const [data, error, loading] = CustomReactQuery("/api/data");
 
   // const fetchData = () => {
   //   axios.get("/api/data").then((response) => {
@@ -12,23 +9,7 @@ const App = () => {
   //     setData(response.data);
   //   });
   // };
-  useEffect(() => {
-    (async () => {
-     try {
-      setError(false);
-      setLoading(true);
-       const response = await axios.get("/api/data");
-      console.log(response.data);
-      setData(response.data);
-      setLoading(false);
-     } catch (error) {
-      console.error("Error fetching data:", error);
-      setError(true);
-      setLoading(false);
-     }
-    })();
-    // fetchData();
-  }, []);
+
 
   // if (error) {
   //   return <div className="w-full min-h-screen bg-zinc-800 p-4 mx-auto text-white">Error fetching data</div>;
