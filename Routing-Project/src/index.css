@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+.active {
+  color: #3b82f6; /* tailwind ka text-blue-500 wala color */
+  padding: 6px 3px;
+  border-width: 2px;
+  cursor: pointer;
+}
